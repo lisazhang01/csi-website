@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107072008) do
+ActiveRecord::Schema.define(version: 20161107101319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,44 @@ ActiveRecord::Schema.define(version: 20161107072008) do
     t.text     "syllabus"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.text     "address"
+    t.integer  "mobile_phone"
+    t.integer  "home_phone"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.integer  "mobile_phone"
+    t.integer  "home_phone"
+    t.text     "address"
+    t.text     "current_school_name"
+    t.string   "emergency_contact_name"
+    t.string   "emergency_contact_relationship"
+    t.integer  "emergency_contact_number"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "employee_id"
+    t.integer  "mobile_phone"
+    t.integer  "home_phone"
+    t.text     "address"
+    t.text     "bio"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

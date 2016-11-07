@@ -1,0 +1,2 @@
+module API::TeachersHelper
+end
