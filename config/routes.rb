@@ -22,7 +22,11 @@ Rails.application.routes.draw do
      #                  PATCH  /api/students/:id(.:format)      api/students#update
      #                  PUT    /api/students/:id(.:format)      api/students#update
      #                  DELETE /api/students/:id(.:format)      api/students#destroy
+
     resources :courses
+
+    resources :teachers
+
   end
 
   resources :static_pages, only: [:index]
